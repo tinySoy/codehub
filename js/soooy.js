@@ -68,4 +68,4 @@ var ckXian = function() {
             }
         }
     })
-} // 加载代码 使用 Ctrl + M 显示参考线
+}() // 加载代码 使用 Ctrl + M 显示参考线
