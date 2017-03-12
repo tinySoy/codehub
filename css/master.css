@@ -5,3 +5,10 @@ body {
         padding: 40px 15px;
         text-align: center;
     }
+.player {
+    display: flex;
+    width: 360px;
+    height: 640px;
+    background: #222222;
+    margin:0 auto;
+}
