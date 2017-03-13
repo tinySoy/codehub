@@ -1,3 +1,29 @@
+/*
+    约定：
+       C为Ctrl键
+       W为Win键
+    移动光标：
+       C-f     光标右(forward)
+       C-b     光标左(backward)
+       C-p     光标上(previous)
+       C-n     光标下(next)
+       C-W-f   往右一个单词
+       C-W-b   往左一个单词
+       C-a     光标移动到行首
+       C-e     光标移动到行尾
+    删除：
+       C-h     删除光标左边的一个字符
+       C-d     删除光标右边的一个字符
+       C-W-h   删除光标左边的一个单词
+       C-W-d   删除光标右边的一个单词
+       C-k     删除从当前光标到行尾的所有内容
+       C-u     删除从当前光标到行首的所有内容
+    重新利用被占用热键：
+       W-f     C-f（搜索）
+       W-n     C-n（新建）
+       W-a     C-a（全选）
+       W-h     C-h（chrome的历史记录）
+*/
 var log = function() {
     console.log.apply(console, arguments)
 }
