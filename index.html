@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>华博文</title>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link href="https://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/master.css">
-  </head>
-
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Project name</a>
+    <head>
+        <meta charset="UTF-8">
+        <title>Jquery轮播图demo</title>
+        <link rel="stylesheet" href="css/slideShow.css">
+        <script src='js/jquery2.0.0.js'></script>
+    </head>
+    <body>
+        <div class="slider">
+            <ul class="slider-main">
+                <li class="slider-panel">
+                    <img src="images/1.jpg"></a>
+                </li>
+                <li class="slider-panel">
+                    <img src="images/2.jpg"></a>
+                </li>
+                <li class="slider-panel">
+                    <img src="images/3.jpg"></a>
+                </li>
+            </ul>
+            <div class="slider-extra">
+                <ul class="slider-nav">
+                    <li class="slider-item"></li>
+                    <li class="slider-item"></li>
+                    <li class="slider-item"></li>
+                </ul>
+                <div class="slider-page">
+                    <a class="slider-pre" href="javascript:;">
+                        <</a>
+                            <a class="slider-next" href="javascript:;">></a></div>
+            </div>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">About me</a></li>
-            <li><a href="html/musicplayer.html">Music player</a></li>
-            <li><a href="#contact">2048</a></li>
-            <li><a href="#spider">Web Spider</a></li>
-
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    <div class="container">
-
-        <div class="starter-template">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-        </div>
-
-    </div>
-    <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-    </button>
-
-    <button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
-    </button>
-    <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-</body>
+        <script src='js/slideShow.js'></script>
+    </body>
+</html>
