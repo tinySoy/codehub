@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Load Animation</title>
+    <style>
+        @keyframes box1 {
+            0% {
+                transform:translate(0, 23px) rotate(45deg);
+            }
+            100% {
+               transform: rotate(135deg);
+            }
+        }
+        @keyframes box2 {
+            0% {
+                transform:translate(0, -23px) rotate(45deg);
+            }
+            100% {
+               transform: rotate(135deg);
+            }
+        }
+        @keyframes box3 {
+            0% {
+                transform:translate(23px, 0px) rotate(135deg);
+            }
+            100% {
+               transform: rotate(45deg);
+            }
+        }
+        @keyframes box4 {
+            0% {
+                transform:translate(-23px, 0px) rotate(135deg);
+            }
+            100% {
+               transform: rotate(45deg);
+            }
+        }
+
+        .animate1 {
+            position: absolute;
+            animation: box1 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 110px 200px;
+            border-radius: 5%;
+        }
+        .animate2 {
+            position: absolute;
+            animation: box2 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 190px 200px;
+            border-radius: 5%;
+        }
+        .animate3 {
+            position: absolute;
+            animation: box3 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 150px 160px;
+            border-radius: 5%;
+        }
+        .animate4 {
+            position: absolute;
+            animation: box4 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 150px 240px;
+            border-radius: 5%;
+        }
+        .animate5 {
+            position: absolute;
+            animation: box1 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 110px 400px;
+            border-radius: 50%;
+        }
+        .animate6 {
+            position: absolute;
+            animation: box2 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 190px 400px;
+            border-radius: 50%;
+        }
+        .animate7 {
+            position: absolute;
+            animation: box3 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 150px 360px;
+            border-radius: 50%;
+        }
+        .animate8 {
+            position: absolute;
+            animation: box4 infinite 1s;
+            animation-direction: alternate;
+            width: 25px;
+            height: 25px;
+            background: green;
+            margin: 150px 440px;
+            border-radius: 50%;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="animate1"></div>
+      <div class="animate2"></div>
+      <div class="animate3"></div>
+      <div class="animate4"></div>
+      <div class="animate5"></div>
+      <div class="animate6"></div>
+      <div class="animate7"></div>
+      <div class="animate8"></div>
+  </body>
+</html>
