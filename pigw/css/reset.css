@@ -1,0 +1,31 @@
+body, div, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, li, input, form, a, p, textarea {
+    margin: 0px;
+    padding: 0px; 
+    font-family:"Microsoft YaHei",Arial,Helvetica,sans-serif,"宋体";
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+img {
+    border: none;
+    display: block;
+}
+
+.clearfloat {
+    zoom: 1;
+}
+
+.clearfloat:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0px;
+}

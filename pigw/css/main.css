@@ -1,0 +1,916 @@
+.header-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+}
+
+.banner {
+    height: 790px;
+    background: #EEE;
+
+    
+}
+
+.banner .banner-logo {
+    float: right;
+    width: 407px;
+    height: 543px;
+    margin-top: 138px;
+    margin-right: 170px;
+    background: url("../img/pig-1.png")
+}
+
+.slogan {    
+    width: 32px;    
+    margin: 0 auto;    
+    line-height: 35px;    
+    font-size: 32px;  
+    position: absolute;
+    font-family:"楷体"; 
+} 
+.banner-slogan1 {
+    top: 98px;
+    left:396px;
+    
+}
+.banner-slogan2 {
+    top: 46px;
+    left:496px;
+}
+
+.pig-grown {
+    height: 1100px;
+    background: #659907;
+}
+
+.pig-grown .set-title {
+
+}
+
+.pig-grown .grown-logo {
+    position: absolute;
+    width: 716px;
+    height: 178px;
+    top: 256px;
+    left: 230px;
+    background: url("../img/pig-2.png")
+}
+
+.pig-grown .set-title {
+    text-align: center;
+    font-size: 35px;
+    transform: translateY(40px);
+}
+
+.pig-grown .set-title span{
+    display: inline-block;
+    width: 270px;
+    margin: 0 45px;
+    border-bottom: 3px dashed white;
+}
+.pig-grown .minipig {
+    position: absolute;
+    left: 447px;
+    top: 42px;
+}
+
+.pig-grown .grown-slogan {
+    position: absolute;
+    width: 310px;
+    height: 50px;
+    background: #375108;
+    border-radius: 25px;
+    top: 415px;
+    right: 120px;
+    text-align: center;
+    line-height: 45px;
+
+}
+.pig-grown .grown-slogan span {
+    font-size: 26px;
+    color: white;
+}
+.pig-grown .grown-doc {
+    position: absolute;
+    top: 520px;
+    left: 160px;
+    font-size: 18px;
+    text-shadow: 6px 2px 22px rgba(39, 51, 16, 0.85);
+}
+
+.env1, .env2, .env3, .env4 {
+    width: 176px;
+    height: 320px;
+    background: #e0ebcd;
+}
+.env5 {
+    width: 352px;
+    height: 320px;
+    background: #e0ebcd;
+}
+.up-env-img {
+    position: absolute;
+
+}
+
+.pig-grown .env1 {
+    position: absolute;
+    top: 690px;
+    left: 0px;
+}
+.pig-grown .env2 {
+    position: absolute;
+    top: 690px;
+    left: 230px;
+}
+.pig-grown .env3 {
+    position: absolute;
+    top: 690px;
+    left: 460px;
+}
+
+.pig-grown .env4 {
+    position: absolute;
+    top: 690px;
+    left: 685px;
+}
+.pig-grown .env5 {
+    width: 352px;
+    position: absolute;
+    top: 690px;
+    left: 920px;
+}
+
+
+
+.pig-grown .gorwn-env img {
+    width: 166px;
+    height: 154px;
+    margin: 4px;
+}
+
+.pig-grown .gorwn-env .up-env-img {
+    position: absolute;
+    left: 132px;
+    top: 1px;
+}
+
+.pig-grown .gorwn-env .img-title { 
+    font-size: 18px;
+    color: #659907;
+    text-align: center;
+}
+.pig-grown .gorwn-env .img-title p { 
+    font-size: 14px;
+    color: black;
+    text-align: center;
+    line-height: 27px;
+}
+
+.pig-grown .arrow img {
+    width: 40px;
+    height: 40px;
+
+}
+
+.pig-grown .arrow {
+    position: absolute;
+    top: 900px;
+    
+}
+.pig-grown .arrow1 {
+    left: 180px;
+}
+.pig-grown .arrow2 {
+    left: 410px;
+}
+.pig-grown .arrow3 {
+    left: 635px;
+}
+.pig-grown .arrow4 {
+    left: 864px;
+}
+
+.pig-set .fature-part1 {
+    height: 1872px;
+
+}
+
+.fature-part1 .set-title {
+    text-align: center;
+    font-size: 35px;
+    transform: translateY(40px);
+}
+
+.fature-part1 .set-title span{
+    display: inline-block;
+    width: 270px;
+    margin: 0 45px;
+    border-bottom: 3px dashed black;
+}
+.fature-part1 .minipig {
+    position: absolute;
+    left: 447px;
+    top: 42px;
+}
+
+.pig-fature .fature-part1 .part1-title{
+    position: absolute;
+    width: 310px;
+    height: 55px;
+    background: #659907;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    line-height: 50px;
+    top: 210px;
+    left: 40px;
+
+}
+.fature-part1 .part1-doc {
+    position: absolute;
+    height: 55px;
+    width: 716px;
+    top: 210px;
+    left: 380px;
+    font-size: 18px;
+    line-height: 30px;
+    color: #848484;
+}
+
+.fature-part1 .part1-logo {
+    position: absolute;
+    top: 325px;
+    left: 166px;
+}
+
+.fature-part1 .pig-history {
+    position: absolute;
+    top: 540px;
+    left: 170px;
+    width: 890px;
+    height: 350px;
+    /* background: #eeeeee; */
+}
+
+.fature-part1 .history-1 {
+    height: 90px;
+    /* border: 1px solid red; */
+}
+
+.fature-part1 .history-2 {
+
+    height: 180px;
+    /* border: 1px solid red; */
+}
+
+.fature-part1 .history-3 {
+    height: 80px;
+    /* border: 1px solid red; */
+}
+
+.fature-part1 .time {
+    height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    background: #659907;
+    text-align: center;
+    font-size: 26px;
+    line-height: 38px;
+}
+.fature-part1 .his-doc {
+    position: relative;
+    font-size: 16px;
+    width: 720px;
+    left: 147px;
+    top: -32px;
+    border-bottom: 5px dotted #659907;
+    overflow: hidden
+}
+
+.fature-part1 .green-text {
+    color: #375108;
+}
+
+.fature-part1 .pig-born .img-p-1, .img-p-2 {
+    width: 290px;
+    height: 380px;
+    /* border: 1px solid red; */
+}
+.fature-part1 .pig-born .img-p {
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.fature-part1 .pig-born .img-p-3 {
+    width: 350px;
+    height: 500px;
+    /* border: 1px solid red; */
+}
+
+.fature-part1 .pig-born .img-p-3 .img-p {
+    width: 330px;
+    height: 330px;
+    border: 5px solid #659907;
+}
+
+.fature-part1 .pig-born .img-p-1 {
+    position: absolute;
+    top: 950px;
+    left: 50px;
+}
+
+.fature-part1 .pig-born .img-p-2 {
+    position: absolute;
+    top: 950px;
+    left: 410px;
+}
+
+.fature-part1 .pig-born .img-p-3 {
+    position: absolute;
+    top: 900px;
+    left: 800px;
+}
+
+.fature-part1 .pig-born h3 {
+    text-align: center;
+    color: #375108;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.fature-part1 .pig-born p {
+    text-align: center;
+    color: #659907;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.fature-part1 .img-p-add {
+    position: absolute;
+    top: 1040px;
+    left: 343px;
+}
+
+.fature-part1 .img-p-equal {
+    position: absolute;
+    top: 1050px;
+    left: 715px;
+}
+.fature-part1 .pig-b-more {
+    width: 760px;
+    height: 90px;
+    background: #EEE;
+    position: absolute;
+    top: 1315px;
+    left: 30px;
+}
+.fature-part1 .pig-b-more .line {
+    width: 700px;
+    height: 5px;
+    border-bottom: 3px solid red;
+}
+.fature-part1 .pig-b-more .angle {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid orange;
+    position: absolute;
+    left: 700px;
+    top: -13px;
+}
+.fature-part1 .pig-b-more .more-btn {
+    display: inline-block;   
+    width: 166px;
+    height: 30px;
+    border-radius: 15px;
+    background: #654932;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.fature-part1 .pig-b-more .more-arrow {
+    display: inline-block;
+    width: 66px;
+    height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.fature-part1 .pig-b-more .more-link {
+    display: inline-block;
+    width: 300px;
+    height: 30px;
+
+    font-size: 16px;
+    text-decoration: underline;
+    color:  #654932;
+
+}
+.fature-part1 .hon-sliders {
+    width: 1200px;
+    height: 278px;
+    /* background: #EEE; */
+    position: absolute;
+    overflow: hidden;
+    top: 1500px;
+    
+}
+.fature-part1 .hon-slider {
+    display: inline-block;
+    width: 285px;
+    height: 278px;
+    /* background: rgb(68, 24, 24); */
+}
+
+.fature-part1 .hon-sliders img {
+    width: 256px;
+    height: 190px;
+    margin: 0 auto;
+}
+.fature-part1 .hon-sliders .title {
+
+    width: 236px;
+    height: 30px;
+    margin: 0 auto;
+    background: #7f7f7f;
+    text-align: center;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.fature-part2 .back-img {
+    height: 400px;
+    background: #659907;
+}
+.fature-part2 .back-img img {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.fature-part2 .pig-feed {
+    position: relative;
+    height: 1600px;
+    /* background: #EEE; */
+
+}
+.fature-part2 .feed-title {
+    position: absolute;
+    top:100px;
+    left: 30px;
+    /* background: #dbd8af; */
+    font-size: 18px;
+}
+.fature-part2 .feed-logo {
+    width: 310px;
+    height: 55px;
+    background: #659907;
+    position: absolute;
+    top: 110px;
+    left: 800px;
+
+    text-align: center;
+    font-size: 24px;
+    line-height: 48px;
+}
+
+.fature-part2 .feed-step {
+    width: 1200px;
+    height: 800px;
+    /* background: #654932; */
+    position: absolute;
+    top: 310px;
+}
+.fature-part2 .feed-step .feed-docs {
+    position: absolute;
+    width: 590px;
+    height: 800px;
+    /* background: gray; */
+    
+}
+
+.fature-part2 .feed-step .feed-imgs {
+    position: absolute;    
+    width: 590px;
+    height: 800px;
+    left: 590px;   
+    /* border: 1px solid red;     */
+    
+}
+
+.fature-part2 .step {
+    position: relative;
+    width: 580px;
+    /* border: 1px solid red; */
+}
+
+.fature-part2 .step-1 {
+    height: 180px;
+}
+
+.fature-part2 .step-2 {
+    height: 180px;   
+}
+
+.fature-part2 .step-3 {
+    height: 160px;   
+    
+}
+
+.fature-part2 .step-4 {
+    height: 280px;
+}
+
+.fature-part2 .circle-out {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border: 1px solid #659907;
+    border-radius: 50%;
+    z-index: 1;    
+
+}
+.fature-part2 .circle-in {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #659907;
+    border-radius: 50%;
+    z-index: 2;
+    left: 6px;
+    top: 6px;
+    
+}
+.fature-part2 .step-count {
+    position: absolute;
+    z-index: 4;
+    left: 20px;
+    top: 16px;
+    font-size: 48px;
+}
+.fature-part2 .step-doc {
+    position: absolute;    
+    z-index: 4;
+    left: 90px;
+    top: 80px;
+    font-size: 16px;
+}
+.fature-part2 .step-arrow {
+    position: absolute;    
+    z-index: 4;
+    left: 460px;
+    top: 48px;
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid #659907;
+    border-right: 60px solid transparent;
+}
+.fature-part2 .step-name {
+    position: absolute;    
+    z-index: 4;
+    left: 110px;
+    top: 24px;
+    font-size: 26px;
+}
+.fature-part2 .step-line {
+    position: absolute;   
+    width: 370px;
+    height: 5px;
+    border-bottom: 1px solid #659907;
+    z-index: 4;
+    left: 90px;
+    top: 52px;
+}
+
+.fature-part2 .pig-p {
+    position: absolute;
+    width: 220px;
+    height: 140px;
+    border: 5px solid #659907;
+}
+.fature-part2 .pig-p  img{
+
+    width: 220px;
+    height: 140px;
+
+}
+
+
+.fature-part2 .feed-imgs .p-1 {
+    top: 10px;
+    left: 10px;
+
+}
+.fature-part2 .feed-imgs .p-2 {
+    top: 10px;
+    left: 290px;
+    
+}
+.fature-part2 .feed-imgs .p-3 {
+    top: 200px;
+    left: 160px;
+    
+}
+.fature-part2 .feed-imgs .p-4 {
+    top: 400px;
+    left: 10px;
+    
+}
+.fature-part2 .feed-imgs .p-5 {
+    top: 400px;
+    left: 290px;
+    
+}
+.fature-part2 .feed-imgs .p-6 {
+    top: 600px;
+    left: 170px;
+    
+}
+
+
+#parallelogram1 {
+    width: 10px;
+    height: 300px;
+    background: #659907;
+    transform: skew(30deg);
+    position: absolute;
+    top: 140px;
+    left: 260px;   
+} 
+
+
+#parallelogram2 {
+    width: 10px;
+    height: 300px;
+    background: #659907;
+    transform: skew(-30deg);
+    position: absolute;
+    top: 140px;
+    left: 260px;    
+} 
+
+
+.fature-part2 .feed-videos {
+    height: 380px;
+    width: 1200px;
+    /* background: red; */
+    position: absolute;
+    top: 800px;
+}
+.fature-part2 .feed-videos .f-v {
+    margin: 2px 20px;
+    display: inline-block;
+    float: left;
+    width: 360px;
+    height: 360px;
+    background: #EEE;
+}
+.fature-part2 .feed-videos .f-v img {
+    width: 320px;
+    height: 310px;
+    position: relative;
+    left: 20px;
+}
+.fature-part2 .feed-videos .f-v h4 {
+    text-align: center;
+    font-size: 18px;
+    line-height: 36px;
+    color: #654932;
+}
+
+.fature-part2 .feed-more {
+    position: absolute;
+    top: 1200px;
+}
+
+.fature-part2 .pig-b-more .more-btn {
+    display: inline-block;   
+    width: 166px;
+    height: 30px;
+    border-radius: 15px;
+    background: #654932;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.fature-part2 .pig-b-more .more-arrow {
+    display: inline-block;
+    width: 66px;
+    height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.fature-part2 .pig-b-more .more-link {
+    display: inline-block;
+    width: 300px;
+    height: 30px;
+
+    font-size: 16px;
+    text-decoration: underline;
+    color:  #654932;
+
+}
+
+.pig-set .pig-ad { 
+    height: 690px;
+    background: #aed36a;
+}
+
+.pig-ad .pig-ad-slogan {
+    text-align: center;
+    font-size: 48px;
+    color: white;
+}
+.pig-ad .pig-ad-line{
+    position: absolute;
+    left: 210px;
+    width: 770px;
+    height: 10px;
+    border-bottom: 3px solid white;
+}
+
+.pig-ad .pig-ad-img{
+    position: absolute;
+    top: 200px;
+    left: 210px;
+
+    border-bottom: 3px solid white;
+}
+
+.pig-meat {
+    height: 1800px;
+    background-image: url("../img/meat.png");
+    background-repeat: no-repeat;
+    background-position: -270px -460px;
+}
+
+.pig-meat .public-container{
+    height: 1800px;
+    /* background: #659907; */
+}
+
+.pig-meat .set-title {
+    text-align: center;
+    font-size: 35px;
+    transform: translateY(40px);
+}
+
+.pig-meat .set-title span{
+    display: inline-block;
+    width: 270px;
+    margin: 0 45px;
+    border-bottom: 3px dashed white;
+}
+.pig-meat .minipig {
+    position: absolute;
+    left: 422px;
+    top: 42px;
+}
+
+.pig-meat .shop-form {
+    position: absolute;
+    top: 907px;
+    width: 1200px;
+    height: 880px;
+    /* background: #aed36a; */
+}
+.pig-meat .shop-logo {
+    position: absolute;
+    top: 140px;
+    left: 100px;
+}
+
+.pig-meat .shop-title {
+    position: absolute;
+    top: 140px;
+    left: 570px;
+}
+
+.pig-meat .shop-title-1 {
+    font-size: 72px;
+}
+.pig-meat .shop-line {
+    position: relative;
+    left: 50px;
+    width: 426px;
+    height: 10px;
+    border-bottom: 3px solid #375108;
+}
+.pig-meat .shop-title-2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.pig-meat .shopping-form {
+    position: absolute;
+    height: 450px;
+    width: 1080px;
+    background: #658822;
+    left: 64px;
+    top: 320px;
+}
+.pig-meat  .shop-input {
+    display: block;
+    widows: 340px;
+    height: 64px;
+    border: 2px solid white;
+    background: #658822;
+    color: white;
+}
+
+.pig-meat .sh-1 {
+    position: absolute;
+    left: 60px;
+    top: 80px;
+}
+.pig-meat .sh-2 {
+    position: absolute;
+    left: 60px;
+    top: 160px;
+}
+.pig-meat .sh-3 {
+    position: absolute;
+    left: 60px;
+    top: 240px;
+}
+
+input::placeholder {
+    color: white;
+    font-size: 14px;
+}
+
+.pig-meat .sh-4 {
+    position: absolute;
+    top: 80px;
+    left: 300px;
+    width: 340px;
+    height: 240px;
+}
+.pig-meat .shop-img {
+    position: relative;
+    left: 700px;
+}
+.pig-meat .shop-qa {
+    position: absolute;
+    left:410px;
+    width: 156px;
+    height: 48px;
+    border: 1px solid white;
+    background: white;
+    text-align: center;
+    color: #658822;
+    font-size: 14px;
+    line-height: 48px;
+}
+
+.pig-cook {
+    height: 640px;
+    background: #EEE;
+}
+
+.pig-cook .public-container {
+     height: 600px;
+     /* background: #aed36a; */
+}
+
+.pig-cook .set-title {
+    text-align: center;
+    font-size: 35px;
+    transform: translateY(40px);
+}
+
+.pig-cook .set-title span{
+    display: inline-block;
+    width: 270px;
+    margin: 0 45px;
+    border-bottom: 3px dashed #375108;
+}
+.pig-cook .minipig {
+    position: absolute;
+    left: 422px;
+    top: 42px;
+}
+.pig-cook .cook-slider {
+    position: absolute;
+    top: 200px;
+    width: 1200px;
+    height: 270px;
+    /* border: 3px gray solid; */
+}
+.pig-cook .c-s {
+    float: left;
+    width: 350px;
+    height:  260px;
+    margin: 0 20px;
+    /* border: 1px solid red; */
+}

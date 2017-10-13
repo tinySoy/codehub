@@ -1,0 +1,97 @@
+.public-header {
+    height: 120px;
+    
+}
+
+.public-container {
+    position: relative;
+    margin: 0 auto;
+    width: 1200px;
+
+}
+
+.public-header .header-nav-left {
+    margin-top: 55px;
+    margin-right: 76px;
+    float: left;
+}
+
+.public-header .header-nav-left .item{
+    float: left;
+    margin-left: 60px;
+    font-size: 10px;
+    
+}
+.public-header .a{
+    color: #4a1f08;
+    
+}
+
+.public-header .header-nav-right {
+    margin-top: 55px;
+    margin-right: 82px;
+    float: right;
+}
+
+.public-header .header-nav-right .item{
+    float: left;
+    margin-left: 60px;
+    font-size: 10px;
+    
+}
+
+.public-footer {
+    height: 240px;
+   
+}
+
+.public-footer .company {
+    height: 180px;
+    background: #659907;
+}
+.public-footer .company-name {
+    position: absolute;
+    height: 40px;
+    width: 250px;
+    border-bottom: 2px solid white;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 24px;
+    font-family: AdobeFanHeitiStd-Bold;
+    color: white;
+    line-height: 30px;
+}
+
+.public-footer .public-rigth {
+    text-align: center;
+    font-size: 14px;    
+    line-height: 2em;
+}
+
+.public-footer .co-info {
+    position: absolute;
+    width: 950px;
+    height: 50px;
+    /* border: 1px red solid; */
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
+.public-footer .c-i {
+    float: left;
+    height: 50px;
+    /* border: 1px gray solid; */
+    margin: 0 20px;
+}
+
+.public-footer .co-info span {
+    position: relative;
+    top: -22px;
+    left: 38px;
+
+}
+
+
