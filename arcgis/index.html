@@ -16,26 +16,44 @@
 <script src="https://js.arcgis.com/4.5/"></script>
 <script>
 let map;
-let view;
+let mapViev;
 require([
   "esri/Map",
   "esri/views/MapView",
+  "esri/request",
   "dojo/domReady!"
-], function(Map, MapView){
+], function(Map, MapView, Request){
   map = new Map({
-    basemap: "osm"
+    basemap: "streets"
   });
-  view = new MapView({
-    container: "viewDiv", 
-    map: map,   
-    zoom: 8,
-    center: [113.531, 22.7902] ,
+  let viewOpitons = {
+    container: "viewDiv",
+    map: map,
+    center: [-117.1613, 32.7127],
     scale: 10000,
-  });
+  }
+  mapView = new MapView(viewOpitons);
+  let url = "http://server.arcgisonline.com/arcgis/rest/?f=pjson"
+  let option = {
+    responseType: "json",
+  }
+  Request(url, option)
+  .then(function(response) {
+    console.log(response.data)
+    let data = response.data
+    let select = document.querySelector("#maptypes")
+    for(let i of data.services) {
+      let option = document.createElement('option')
+      option.text = i.name
+      select.appendChild(option)
+    }
+  })
 });
 </script>
 </head>
 <body>
+  <select id="maptypes"></select>
+    
   <div id="viewDiv"></div>
 </body>
 </html>
