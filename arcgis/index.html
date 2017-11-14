@@ -15,12 +15,10 @@
 </style>
 <link rel="stylesheet" href="https://js.arcgis.com/4.4/esri/css/main.css">
 <script src="https://js.arcgis.com/4.4/"></script>
-<script src='utils.js'>
-
-</script>
 <script>
 let map;
 let mapViev;
+let mapImage
 let basemaps = ["streets", "satellite", "hybrid", "terrain", "topo", "gray", "dark-gray",
                 "oceans", "national-geographic", "osm", "dark-gray-vector", "gray-vector",
                 "streets-vector", "topo-vector", "streets-night-vector", "streets-relief-vector",
@@ -36,10 +34,10 @@ var addButtons = function (basemaps) {
     for (let map of basemaps) {
         html += tempButton(map)
     }
-    e('#basemap').insertAdjacentHTML('beforeend', html)
+    document.querySelector('#basemap').insertAdjacentHTML('beforeend', html)
 }
 var bindEvents = function () {
-    e('#basemap').addEventListener("click", function (event) {
+    document.querySelector('#basemap').addEventListener("click", function (event) {
         var target = event.target
         if(target.classList.contains('switcher')) {
             map.basemap = target.innerHTML
@@ -48,15 +46,17 @@ var bindEvents = function () {
 }
 require([
   "esri/Map",
-  "esri/views/MapView",
+  "esri/views/SceneView",
   "esri/request",
   "esri/layers/MapImageLayer",
   "esri/widgets/Legend",
+  "esri/layers/support/MapImage",
   "dojo/domReady!"
-], function(Map, MapView, Request, MapImageLayer, Legend){
+], function(Map, MapView, Request, MapImageLayer, Legend, MapImage){
   map = new Map({
     basemap: "topo",
   });
+  mapImage = new MapImage({href:'https://camo.mybb.com/e01de90be6012adc1b1701dba899491a9348ae79/687474703a2f2f7777772e6a71756572797363726970742e6e65742f696d616765732f53696d706c6573742d526573706f6e736976652d6a51756572792d496d6167652d4c69676874626f782d506c7567696e2d73696d706c652d6c69676874626f782e6a7067'})
 
   let viewOpitons = {
     container: "viewDiv",

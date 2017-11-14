@@ -18,22 +18,44 @@
 <script>
 let map
 let mapViev
+let mapImage
 require([
   "esri/Map",
-  "esri/views/MapView",
+  "esri/views/SceneView",
+  "esri/layers/support/MapImage",
+  "esri/layers/FeatureLayer",
+  "esri/widgets/Legend",
   "dojo/domReady!"
-], function(Map, MapView){
+], function(Map, SceneView, MapImage, FeatureLayer, Legend){
   map = new Map({
     basemap: "topo"
   })
-
+  mapImage = new MapImage({
+    extent: {
+      xmin: -9177811,
+      ymin: 4247000,
+      xmax: -9176791,
+      ymax: 4247784,
+    },
+    href: 'ddd.jpg',
+  })
+  let fLayer = new FeatureLayer({
+    url: 'https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/palm_springs_wind_turbines/FeatureServer'
+  })
+  let fLayer1 = new FeatureLayer({
+    url:'https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/weather_stations_010417/FeatureServer/0'
+  })
+  map.add(fLayer)
+  map.add(fLayer1)
   let viewOpitons = {
     container: "viewDiv",
     map: map,
     center: [-117.1613, 32.7127],
     scale: 5000000,
   }
-  mapView = new MapView(viewOpitons)
+  mapView = new SceneView(viewOpitons)
+  let legend = new Legend({view: mapView});
+  mapView.ui.add(legend, "bottom-left");
 })
 </script>
 </head>
@@ -41,9 +63,9 @@ require([
   <div class="buttons">
     <button class="map-switcher" data-mapstyle=""></button>
     <button class="map-switcher" data-mapstyle=""></button>
-    
+
   </div>
-    
+
   <div id="viewDiv"></div>
 </body>
 </html>
