@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Sketch temporary geometries - 4.5</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.5/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.5/"></script>
+
+  <style>
+    html,
+    body,
+    #viewDiv {
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      font-family: verdana;
+    }
+
+    #topbar {
+      background: #fff;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 10px;
+    }
+
+    .action-button {
+      font-size: 16px;
+      background-color: transparent;
+      border: 1px solid #D3D3D3;
+      color: #6e6e6e;
+      height: 32px;
+      width: 32px;
+      text-align: center;
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .action-button:hover,
+    .action-button:focus {
+      background: #0079c1;
+      color: #e4e4e4;
+    }
+
+    .active {
+      background: #0079c1;
+      color: #e4e4e4;
+    }
+  </style>
+
+  <script>
+    require([
+      "esri/views/SceneView",
+      "esri/Map",
+      "esri/widgets/Sketch/SketchViewModel",
+      "esri/Graphic",
+      "dojo/domReady!"
+    ], function(
+      SceneView, Map,
+      SketchViewModel, Graphic
+    ) {
+
+      // Arctic Ocean Basemap
+      var map = new Map({
+        basemap: "osm",
+        ground: "world-elevation"
+      });
+
+      var view = new SceneView({
+        container: "viewDiv",
+        map: map,
+        zoom: 5
+      });
+      // 纬度：lat 经度：lon
+      var squareGraphic = function (startPoint, endPoint) {
+        var p1 = [startPoint.longitude, startPoint.latitude]
+        var p3 = [endPoint.longitude, endPoint.latitude]
+        // 边长正方形.
+        var lonLength = Math.abs(p1[0] - p3[0])
+        var latLength = Math.abs(p1[1] - p3[1])
+        var length = Math.min(lonLength, latLength)
+        if(p1[0] > p3[0]) {
+          p3[0] = p1[0] - length
+        } else {
+          p3[0] = p1[0] + length
+        }
+        if(p1[1] > p3[1]) {
+          p3[1] = p1[1] - length
+        } else {
+          p3[1] = p1[1] + length
+        }
+
+        // var p2 = [startPoint.longitude, endPoint.latitude]
+        // var p4 = [endPoint.longitude, startPoint.latitude]
+        var p2 = [p1[0], p3[1]]
+        var p4 = [p3[0], p1[1]]
+        // />  \>  ok
+        // <\  </ need process
+        if(p1[0] > p3[0] && p1[1] < p3[1]) {
+          var temp = p2
+          p2 = p4
+          p4 = temp
+          temp = p1
+          p1 = p3
+          p3 = temp
+        } else if(p1[0] > p3[0] && p1[1] > p3[1]) {
+          var temp = p2
+          p2 = p4
+          p4 = temp
+        }
+
+        // Create a polygon geometry
+        var polygon = {
+          type: "polygon", // autocasts as new Polygon()
+          // p1 是 startPoint, P3 是 endPoint,
+          //  p2, p4 从 P1 P3 计算
+          rings: [p1, p2, p3, p4]
+        };
+
+        // Create a symbol for rendering the graphic
+        var fillSymbol = {
+          type: "simple-fill", // autocasts as new SimpleFillSymbol()
+          color: [227, 139, 79, 0.8],
+          outline: { // autocasts as new SimpleLineSymbol()
+            color: [255, 255, 255],
+            width: 1
+          }
+        };
+
+        // Add the geometry and symbol to a new graphic
+        var polygonGraphic = new Graphic({
+          geometry: polygon,
+          symbol: fillSymbol
+        });
+        return polygonGraphic
+      }
+
+      view.then(function(evt) {
+        // create a new sketch view model
+        var sketchViewModel = new SketchViewModel({
+          view: view,
+          pointSymbol: { // symbol used for points
+            type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
+            style: "square",
+            color: "#8A2BE2",
+            size: "16px",
+            outline: { // autocasts as new SimpleLineSymbol()
+              color: [255, 255, 255],
+              width: 3 // points
+            }
+          },
+          polylineSymbol: { // symbol used for polylines
+            type: "simple-line", // autocasts as new SimpleMarkerSymbol()
+            color: "#8A2BE2",
+            width: "4",
+            style: "dash"
+          },
+          polygonSymbol: { // symbol used for polygons
+            type: "simple-fill", // autocasts as new SimpleMarkerSymbol()
+            color: "rgba(138,43,226, 0.8)",
+            style: "solid",
+            outline: {
+              color: "white",
+              width: 1
+            }
+          }
+        });
+
+        // ************************************************************
+        // view event,
+        var disableDrag = view.on("drag", function(evt) {
+          // prevents panning with the mouse drag event
+          evt.stopPropagation();
+        });
+        var downPoint = null
+        var upPoint = null
+        var movePoint = null
+        var move = 'unuse'
+        view.on('pointer-down', function(evt) {
+          if(move == 'unuse') {
+            move = 'using'
+            downPoint = view.toMap({x: evt.x, y: evt.y});
+            // console.log('downPoint:', downPoint.latitude, downPoint.longitude)
+          }
+        });
+        view.on('pointer-up', function(evt) {
+          move = 'used'
+          upPoint = view.toMap({x: evt.x, y: evt.y});
+          // console.log('upPoint:', upPoint.latitude, upPoint.longitude)
+          if(disableDrag == null) {
+            return
+          } else {
+            disableDrag.remove()
+            disableDrag = null
+            view.graphics.removeAll();
+            var graphic = squareGraphic(downPoint, upPoint)
+            view.graphics.add(graphic)
+          }
+
+        });
+        //
+        view.on('pointer-move', function(evt) {
+          if(move == 'using') {
+            movePoint = view.toMap({x: evt.x, y: evt.y});
+            // console.log('movePoint:', movePoint.latitude, movePoint.longitude)
+            view.graphics.removeAll();
+            var graphic = squareGraphic(downPoint, movePoint)
+            view.graphics.add(graphic)
+          }
+        });
+        view.on('click', function(evt) {
+          var point = evt.mapPoint
+          console.log('point ',"lon: ", point.longitude,'lat', point.latitude)
+        });
+        // downPoint: 7.1168127796925145 7.321974083447772
+        // upPoint: 6.583391324611529 7.6998427803958736
+
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div id="viewDiv">
+    <div id="topbar">
+      <button class="action-button esri-icon-blank-map-pin" id="pointButton" type="button"
+        title="Draw point"></button>
+      <button class="action-button esri-icon-polyline" id="polylineButton" type="button"
+        title="Draw polyline"></button>
+      <button class="action-button esri-icon-polygon" id="polygonButton" type="button"
+        title="Draw polygon"></button>
+      <button class="action-button esri-icon-trash" id="resetBtn" type="button" title="Clear graphics"></button>
+    </div>
+  </div>
+</body>
+
+</html>
