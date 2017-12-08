@@ -135,3 +135,29 @@ xhr.send(formData);
 　　　　formData.append('files[]', files[i]);
 　　}
 ```
+
+### ajax
+
+```JavaScript
+　　function request(type, url, opts, callback) {
+　　　　var xhr = new XMLHttpRequest();
+　　　　if (typeof opts === 'function') {
+　　　　　　callback = opts;
+　　　　　　opts = null;
+　　　　}
+　　　　xhr.open(type, url);
+　　　　var fd = new FormData();
+　　　　if (type === 'POST' && opts) {
+　　　　　　for (var key in opts) {
+　　　　　　　　fd.append(key, JSON.stringify(opts[key]));
+　　　　　　}
+　　　　}
+　　　　xhr.onload = function () {
+　　　　　　callback(JSON.parse(xhr.response));
+　　　　};
+　　　　xhr.send(opts ? fd : null);
+　　}
+    //然后，基于request函数，模拟jQuery的get和post方法。
+　　var get = request.bind(this, 'GET');
+　　var post = request.bind(this, 'POST');    
+```
