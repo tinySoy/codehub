@@ -161,3 +161,38 @@ xhr.send(formData);
 　　var get = request.bind(this, 'GET');
 　　var post = request.bind(this, 'POST');    
 ```
+### tools
+```JavaScript
+// 比typeof运算符更准确的类型判断函数
+var type = function (o){
+  var s = Object.prototype.toString.call(o);
+  return s.match(/\[object (.*?)\]/)[1].toLowerCase();
+};
+
+type({}); // "object"
+type([]); // "array"
+type(5); // "number"
+type(null); // "null"
+type(); // "undefined"
+type(/abcd/); // "regex"
+type(new Date()); // "date"
+// 在上面这个type函数的基础上，还可以加上专门判断某种类型数据的方法。
+['Null',
+ 'Undefined',
+ 'Object',
+ 'Array',
+ 'String',
+ 'Number',
+ 'Boolean',
+ 'Function',
+ 'RegExp'
+].forEach(function (t) {
+  type['is' + t] = function (o) {
+    return type(o) === t.toLowerCase();
+  };
+});
+
+type.isObject({}) // true
+type.isNumber(NaN) // true
+type.isRegExp(/abc/) // true
+```
