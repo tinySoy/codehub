@@ -137,6 +137,22 @@ Number.MIN_SAFE_INTEGER // -9007199254740991
 
 ```
 
+
+### Console 对象
+```JavaScript
+// console对象的所有方法，都可以被覆盖。因此，可以按照自己的需要，定义console.log方法。
+['log', 'info', 'warn', 'error'].forEach(function(method) {
+  console[method] = console[method].bind(
+    console,
+    new Date().toISOString()
+  );
+});
+
+console.log("出错了！");
+// 2014-05-18T09:00.000Z 出错了！
+```
+
+
 ### Number对象
 ```JavaScript
 // test
