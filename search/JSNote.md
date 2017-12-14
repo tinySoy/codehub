@@ -74,7 +74,67 @@ if (new Boolean(null)) {
 ```
 ### Number对象
 ```JavaScript
-// Number对象
+// Number对象作为构造函数使用，返回一个值为1的对象。
+var n = new Number(1);
+typeof n // "object"
+// 作为工具函数时，它可以将任何类型的值转为数值。
+Number(true) // 1
+// 
+// Number对象拥有以下一些属性。
+Number.POSITIVE_INFINITY // Infinity
+Number.NEGATIVE_INFINITY // -Infinity
+Number.NaN // NaN
+
+Number.MAX_VALUE
+// 1.7976931348623157e+308
+Number.MAX_VALUE < Infinity
+// true
+
+Number.MIN_VALUE
+// 5e-324
+Number.MIN_VALUE > 0
+// true
+
+Number.MAX_SAFE_INTEGER // 9007199254740991
+Number.MIN_SAFE_INTEGER // -9007199254740991
+//
+// Number对象部署了自己的toString方法，用来将一个数值转为字符串形式。
+
+(10).toString() // "10"
+// toString方法可以接受一个参数，表示输出的进制。如果省略这个参数，
+// 默认将数值先转为十进制，再输出字符串；否则，就根据参数指定的进制，将一个数字转化成某个进制的字符串。
+(10).toString(2) // "1010"
+(10).toString(8) // "12"
+(10).toString(16) // "a"
+// 上面代码中，之所以要把10放在括号里，是为了表明10是一个单独的数值，
+// 后面的点表示调用对象属性。如果不加括号，这个点会被JavaScript引擎解释成小数点，从而报错。
+
+10.toString(2)
+// SyntaxError: Unexpected token ILLEGAL
+// 只要能够让JavaScript引擎不混淆小数点和对象的点运算符，
+// 各种写法都能用。除了为10加上括号，还可以在10后面加两个点，
+// JavaScript会把第一个点理解成小数点（即10.0），把第二个点理解成调用对象属性，从而得到正确结果。
+
+10..toString(2)
+// "1010"
+
+// 其他方法还包括
+10 .toString(2) // "1010"
+10.0.toString(2) // "1010"
+// 这实际上意味着，可以直接对一个小数使用toString方法。
+10.5.toString() // "10.5"
+10.5.toString(2) // "1010.1"
+10.5.toString(8) // "12.4"
+10.5.toString(16) // "a.8"
+
+//通过方括号运算符也可以调用toString方法。
+10['toString'](2) // "1010"
+// 将其他进制的数，转回十进制，需要使用parseInt方法。
+//
+//toFixed方法用于将一个数转为指定位数的小数，返回这个小数对应的字符串。
+(10).toFixed(2) // "10.00"
+10.005.toFixed(2) // "10.01"
+
 ```
 
 ### Number对象
