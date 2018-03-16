@@ -153,6 +153,38 @@ console.log("出错了！");
 ```
 
 
+### 面向对象
+```JavaScript
+// 使用new命令时，它后面的函数调用就不是正常的调用，而是依次执行下面的步骤。
+// 1, 创建一个空对象，作为将要返回的对象实例
+// 2, 将这个空对象的原型，指向构造函数的prototype属性
+// 3, 将这个空对象赋值给函数内部的this关键字
+// 4, 开始执行构造函数内部的代码
+
+// 如果构造函数内部有return语句，而且return后面跟着一个对象，
+// new命令会返回return语句指定的对象；否则，就会不管return语句，返回this对象。
+
+var Vehicle = function () {
+  this.price = 1000;
+  return 1000;
+};
+
+(new Vehicle()) === 1000
+// false
+
+// 上面代码中，构造函数Vehicle的return语句返回一个数值。这时，new命令就会忽略这个return语句，返回“构造”后的this对象。
+
+// 但是，如果return语句返回的是一个跟this无关的新对象，new命令会返回这个新对象，而不是this对象。这一点需要特别引起注意。
+
+var Vehicle = function (){
+  this.price = 1000;
+  return { price: 2000 };
+};
+
+(new Vehicle()).price
+// 2000
+```
+
 ### Number对象
 ```JavaScript
 // test
