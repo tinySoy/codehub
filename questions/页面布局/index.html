@@ -1,0 +1,52 @@
+<!-- 在已提供的HTML片段的基础上继续编写 CSS 和 JS，已完成如下效果图所演示的效果，
+且要求左侧left部分最小宽度100px，最大宽度300px。提示：可以使用 mousedown, mouseup, mousemove
+几个事件来组合处理拖动效果，也欢迎使用其他方案。
+已知HTML片段：
+
+效果图地址：https://img.alicdn.com/tps/TB1y5TdPVXXXXcVXpXXXXXXXXXX-800-434.gif -->
+<html>
+  <head>
+    <style media="screen">
+    /* .container {
+        width: 100%;
+        height: 500px;
+        min-width: 500px;
+        overflow: scroll;
+    }
+    .left,
+    .right {
+        border: 1px solid #ccc;
+        font-size: 22px;
+        color: #333;
+        font-weight: bold;
+        text-align: center;
+        line-height: 500px;
+    }
+    .right {
+        border-left: 0 none;
+    } */
+    .left {
+        float:left;width:200px;
+    }
+    .drag{
+        margin-left: 200px;margin-right: 200px;
+
+    }
+    .right {
+        float:right;width:200px;
+    }
+    </style>
+    <title>按图完成布局和拖动效果</title>
+  </head>
+  <body>
+    <div class="container">
+     <div class="left">
+         left
+     </div>
+     <div class="drag">
+         drag
+     </div>
+      <div class="right">right</div>
+    </div>
+  </body>
+</html>

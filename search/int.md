@@ -23,3 +23,7 @@ var b  = Object.create({})
 
 ```
 
+var plus = x => {
+    x += 2
+    return x *= 2
+}
